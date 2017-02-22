@@ -10,20 +10,23 @@
             <button id="valider" name="valider" onClick="valid()">Valider</button>
         </form>
         <script>
-          function warning() {
+          function warning() { // fonction servant à avertir le client.
             alert('saisissez votre âge');
           }
           function valid() {
             var age = document.getElementById('age').value;
-            if (isNaN(age) == true) {
-              alert('Vous n\'êtes... Rien. Absolument rien !');
-            } // condition qui empeche le client d'inscrire une valeur autre qu'une nombre.
-            else if (parseInt(age) > 17) {
-              alert('Vous êtes majeur');
-            }
-            else {
-              alert('Vous êtes mineur');
-            }
+              if (isNaN(age)) { // condition qui empeche le client d'inscrire une valeur autre qu'un nombre.
+                alert('Vous n\'êtes... Rien. Absolument rien !');
+              }
+              else if (age <= 0) { // condition qui stipule le supérieur à 18 est majeur.
+                alert('Vous êtes fou !');
+              }
+              else if (parseInt(age) > 17) { // condition qui stipule le supérieur à 18 est majeur.
+                alert('Vous êtes majeur');
+              }
+              else { // condition qui stipule le reste est mineur.
+                alert('Vous êtes mineur');
+              }
           }
         </script>
     </body>
